@@ -2,15 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/spa",
   "functions": {
-    "dist/server/node-build.mjs": {
-      "runtime": "nodejs20.x"
+    "api/**/*": {
+      "runtime": "nodejs22.x"
     }
   },
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
