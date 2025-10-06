@@ -1,5 +1,19 @@
 {
-    "rewrites":[
-        {"source": "/(.*)","destination":"/index.html"}
-    ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/spa",
+  "functions": {
+    "dist/server/node-build.mjs": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
