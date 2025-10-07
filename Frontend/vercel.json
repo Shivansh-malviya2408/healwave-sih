@@ -1,5 +1,9 @@
 {
-  "rewrites":[
-      {"source": "/(.*)","destination":"/"}
+
+  "buildCommand": "pnpm install --frozen-lockfile && pnpm run build",
+  "outputDirectory": "dist/spa",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
